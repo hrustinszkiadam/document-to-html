@@ -1,9 +1,14 @@
-#H1
+# Címsor 1
 
-##H2
+Első bekezdés. A bekezdés még mindig tart.
+Új sor.
 
-This is a paragraph
+Bekezdés 2.
 
-  class Paragraph {
-  title: string;
-}
+Bekezdés 3.
+
+# Ez a rész a programkódról szól:
+
+  Console.WriteLine("Hello World");
+
+Ez egy hello world app.
