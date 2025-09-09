@@ -16,12 +16,14 @@ export default class Paragraph {
 	}
 
 	toHTML(): string {
+		let html = '';
 		if (this.type === 'heading' && this.level) {
-			return `<h${this.level}>${this.text}</h${this.level}>`;
+			html = `<h${this.level}>${this.text}</h${this.level}>`;
+		} else if (this.type === 'code') {
+			html = `<pre><code>${this.text}</code></pre>`;
+		} else {
+			html = `<p>${this.text}</p>`;
 		}
-		if (this.type === 'code') {
-			return `<pre><code>${this.text}</code></pre>`;
-		}
-		return `<p>${this.text}</p>`;
+		return html.replaceAll('\n', '<br>');
 	}
 }

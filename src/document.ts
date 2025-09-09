@@ -50,7 +50,6 @@ export default class Document {
 		fileName = fileName.replace(/\.html?$/i, '');
 
 		const htmlContent = this.paragraphs.map((p) => p.toHTML()).join('');
-		console.log(htmlContent);
 		const fullHtml = HTML_WRAPPER.replace(
 			'</body>',
 			`${htmlContent}</body>`
