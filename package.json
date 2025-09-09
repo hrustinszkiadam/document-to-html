@@ -1,0 +1,19 @@
+{
+	"name": "document-to-html",
+	"author": "hrustinszkiadam",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"main": "src/script.ts",
+	"scripts": {
+		"start": "tsx src/script.ts",
+		"build": "tsc src/script.ts --outDir dist --esModuleInterop --resolveJsonModule --lib esnext,dom --module commonjs --target es6"
+	},
+	"devDependencies": {
+		"@types/node": "^24.3.1",
+		"typescript": "~5.8.3"
+	},
+	"dependencies": {
+		"tsx": "^4.20.5"
+	}
+}
