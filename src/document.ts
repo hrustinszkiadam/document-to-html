@@ -1,5 +1,5 @@
 import Paragraph from './paragraph';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import type { HeadingLevel } from './types';
 import { HTML_WRAPPER } from './constants';
 
@@ -56,6 +56,9 @@ export default class Document {
 			`${htmlContent}</body>`
 		).replace('output', fileName);
 
-		writeFileSync(`${fileName}.html`, fullHtml, 'utf-8');
+		if (!existsSync('dist')) {
+			mkdirSync('dist');
+		}
+		writeFileSync(`dist/${fileName}.html`, fullHtml, 'utf-8');
 	}
 }
